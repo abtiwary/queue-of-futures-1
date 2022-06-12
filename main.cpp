@@ -97,7 +97,7 @@ int main() {
     VectorOps vo{};
     vo.start_consumer_thread();
 
-    // create and queue up a hundred futures
+    // create and queue up fifty futures
     for(auto i=0; i < 50; i++) {
         std::vector<double> vec = generate_n_random_numbers(10);
         auto fut = std::async(std::launch::async, &VectorOps::vector_sum, &vo, std::move(vec));
